@@ -21,10 +21,16 @@ public class Client {
         out.flush();
 
     }
-    public String request(String msg){
+    public String request(String msg)throws IOException{
         out.println(msg);
-        
-
+        out.flush();
+        return in.readLine();
     }
+    public void disconnect() throws IOException{
+        in.close();
+        out.close();
+        socket.close();
+    }
+
 
 }

@@ -118,7 +118,7 @@ public class Server {
                 close();
             }
         }
-        // Calculate number of factors for a given number
+        // calculate number of factors for a given number
         private long countFactors(long n) {
             long count = 0;
             for (long i = 1; i * i <= n; i++) {

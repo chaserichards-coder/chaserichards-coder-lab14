@@ -25,8 +25,9 @@ public class Lab14_Tester {
         Client client = new Client("localhost", 2021);
         assertEquals("/127.0.0.1", client.getSocket().getLocalAddress().toString());
         assertEquals(2021, client.getSocket().getPort());
-
+        //waits for client to connect on serversocket
         Socket remote = serverSocket.accept();
+        //
         client.handshake();
         Thread.sleep(1000); // give it a second to actually flush
         BufferedReader incoming = new BufferedReader(new InputStreamReader(remote.getInputStream()));
